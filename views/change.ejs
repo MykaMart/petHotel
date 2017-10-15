@@ -9,11 +9,11 @@
 <body>
 
 	<form action="/guests/<%=  guestObject.id %>/change?_method=PUT" method="POST">
-		name: <input type="text" name="name" value="<%= guestObject.name %>">
-		species: <input type="text" name="species" value="<%= guestObject.species %>">
-		age: <input type="text" name="age" value="<%= guestObject.age %>">
-		Check-In Date: <input type="date" name="checkInDate" value="<%= guestObject.checkInDate %>">
-		Check-Out Date: <input type="date" name="checkOutDate" value="<%= guestObject.checkOutDate %>">
+		Name: <input type="text" name="name" value="<%= guestObject.name %>">
+		Species: <input type="text" name="species" value="<%= guestObject.species %>">
+		Age: <input type="text" name="age" value="<%= guestObject.age %>">
+		Check-In: <input type="date" name="checkInDate" value="<%= guestObject.checkInDate %>">
+		Check-Out: <input type="date" name="checkOutDate" value="<%= guestObject.checkOutDate %>">
 		Checked In: <input type="checkbox" name="checkedIn" <% if(guestObject.checkedIn === true) {%>
 					checkedIn <% } %>/>
 		<button type="submit">Submit</button>

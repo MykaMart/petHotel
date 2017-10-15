@@ -11,13 +11,11 @@
 	<h1> Reservation </h1>
 
 	<h3> <%= guestObject.name %> </h3>
-	<p>name: <%= guestObject.name %> </p>
-	<p>species: <%= guestObject.species %> </p>
-	<p>age: <%= guestObject.age %> </p>
+	<p>Species: <%= guestObject.species %> </p>
+	<p>Age: <%= guestObject.age %> </p>
 	<p>Check-In Date: <%= guestObject.checkInDate %> </p>
 	<p>Check-Out Date: <%= guestObject.checkOutDate %> </p>
 	<p>Checked In: <% if(guestObject.checkedIn === true) {%> Yes <% } else { %> no <% } %> </p>
-
 	<a href="/guests">back</a>
 
 </body>
