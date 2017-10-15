@@ -78,4 +78,24 @@ router.get("/:room/reservation", (req, res) => {
 	});
 })
 
+
+router.put("/:room/reservation", (req, res) => {
+	Guest.findByIdAndUpdate(req.params.room, {
+		checkedIn: true
+	}, (err, guest) => {
+		console.log()
+	})
+
+	res.redirect("./reservation")
+})
+
+router.post("/")
+router.delete("/:room", (req, res) => {
+
+	Guest.findByIdAndRemove(req.params.room, () => {
+		console.log()
+	})
+	res.redirect("/guests")
+})
+
 module.exports = router;

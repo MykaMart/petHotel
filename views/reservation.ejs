@@ -16,6 +16,10 @@
 	<p>Check-In Date: <%= guestObject.checkInDate %> </p>
 	<p>Check-Out Date: <%= guestObject.checkOutDate %> </p>
 	<p>Checked In: <% if(guestObject.checkedIn === true) {%> Yes <% } else { %> no <% } %> </p>
+	
+	<form action="/guests/<%=  guestObject.id %>/reservation?_method=PUT" method="POST">
+		<button type="submit">Check In</button>
+	</form>
 	<a href="/guests">back</a>
 
 </body>
