@@ -2,11 +2,11 @@ const mongoose =  require("mongoose");
 
 const GuestSchema = new mongoose.Schema({
 	name: String,
-	species: String;
+	species: String,
 	age: Number,
-	checkin: Date,
-	checkout: Date,
-	grooming: Boolean
+	checkInDate: Date,
+	checkOutDate: Date,
+	checkedIn: Boolean
 })
 
 module.exports = mongoose.model("Guest", GuestSchema)
