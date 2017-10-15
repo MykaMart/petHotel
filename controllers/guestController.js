@@ -15,4 +15,59 @@ router.get("/", (req, res) => {
 	});
 });
 
+router.get("/make_reservation", (req, res) => {
+	res.render("make_reservation", {})
+})
+
+
+router.post("/add_reservation", (req, res) => {
+
+	Guest.create({
+		name: req.body.name,
+		species: req.body.species,
+		age: req.body.age,
+		checkInDate: req.body.checkInDate,
+		checkOutDate: req.body.checkOutDate,
+		checkedIn: false
+	}, (err, guest) => {
+
+		if(err) {
+			res.send("Error adding guest")
+		} else {
+			res.redirect("/guests")
+		}
+	})
+})
+
+router.get("/:room/change", (req, res) => {
+	Guest.findById(req.params.room, (err, guest) => {
+		if(req.body.checkedIn === "on"){
+			req.body.checkedIn = true
+		} else{
+			req.body.checkedIn = false
+		};
+		res.render("change", {guestObject: guest});
+	});
+});
+
+router.put(":room/change", (req, res) => {
+	if(req.body.checkedIn === "on"){
+			req.body.checkedIn = true
+		} else{
+			req.body.checkedIn = false
+		};
+	Guest.findByIdAndUpdate(req.params.room, {
+		name: req.body.name,
+		species: req.body.species,
+		age: req.body.age,
+		checkInDate: req.body.checkInDate,
+		checkOutDate: req.body.checkOutDate,
+		checkedIn: req.body.checkedIn
+	}, (err, guest) => {
+		console.log()
+	})
+	
+	res.redirect("/reservation")
+})
+
 module.exports = router;
