@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=8, IE=9, IE=edge"/>
+	<link rel="stylesheet" type="text/css" href="styles/style.css">
+	<title></title>
+</head>
+<body>
+
+	<h1> Reservation </h1>
+
+	<h3> <%= guestObject.name %> </h3>
+	<p>name: <%= guestObject.name %> </p>
+	<p>species: <%= guestObject.species %> </p>
+	<p>age: <%= guestObject.age %> </p>
+	<p>Check-In Date: <%= guestObject.checkInDate %> </p>
+	<p>Check-Out Date: <%= guestObject.checkOutDate %> </p>
+	<p>Checked In: <% if(guestObject.checkedIn === true) {%> Yes <% } else { %> no <% } %> </p>
+
+	<a href="/guests">back</a>
+
+</body>
+</html>

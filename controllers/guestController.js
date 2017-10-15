@@ -41,11 +41,12 @@ router.post("/add_reservation", (req, res) => {
 
 router.get("/:room/change", (req, res) => {
 	Guest.findById(req.params.room, (err, guest) => {
-		if(req.body.checkedIn === "on"){
-			req.body.checkedIn = true
+		if(req.body.checkedIn === true){
+			req.body.checkedIn = "on"
 		} else{
-			req.body.checkedIn = false
+			req.body.checkedIn = "off"
 		};
+		console.log(guest)
 		res.render("change", {guestObject: guest});
 	});
 });
@@ -66,7 +67,7 @@ router.put(":room/change", (req, res) => {
 	}, (err, guest) => {
 		console.log()
 	})
-	
+
 	res.redirect("/reservation")
 })
 
