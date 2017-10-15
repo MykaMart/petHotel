@@ -72,7 +72,6 @@ router.put("/:room/change", (req, res) => {
 })
 
 router.get("/:room/reservation", (req, res) => {
-
 	Guest.findById(req.params.room, (err, guest) => {
 		res.render("reservation", {guestObject: guest});
 	});

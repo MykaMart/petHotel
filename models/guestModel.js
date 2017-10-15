@@ -4,8 +4,8 @@ const GuestSchema = new mongoose.Schema({
 	name: String,
 	species: String,
 	age: Number,
-	checkInDate: Date,
-	checkOutDate: Date,
+	// checkInDate: Date,
+	// checkOutDate: Date,
 	checkedIn: Boolean
 })
 
