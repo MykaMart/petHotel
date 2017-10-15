@@ -3,21 +3,28 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=8, IE=9, IE=edge"/>
-	<link rel="stylesheet" type="text/css" href="styles/style.css">
+	<link rel="stylesheet" type="text/css" href="/styles/style.css">
 	<title></title>
 </head>
 <body>
+	<div id="logo">
+		<h1> Red Woof Inn </h1>
+	</div>
 
-	<h1> Room Reservation </h1>
+	<div id="content">
+		<div id="inner">
+			<h3> Room Reservation </h3>
 
-	<form action="./add_reservation" method="POST">
-		Name: <input type="text" name="name">
-		Species: <input type="text" name="species">
-		Age: <input type="text" name="age">
-		Check In: <input type="date" name="checkInDate">
-		Check Out: <input type="date" name="checkOutDate">
-		<button type="submit">Submit</button>
-	</form>
+			<form action="./add_reservation" method="POST">
+				Name: <input type="text" name="name">
+				Species: <input type="text" name="species">
+				Age: <input type="text" name="age"></br>
+				Check In: <input type="date" name="checkInDate">
+				Check Out: <input type="date" name="checkOutDate">
+				<button type="submit">Submit</button>
+			</form>
+		</div>
+	</div>
 
 
 </body>

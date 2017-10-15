@@ -3,21 +3,33 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=8, IE=9, IE=edge"/>
-	<link rel="stylesheet" type="text/css" href="styles/style.css">
+	<link rel="stylesheet" type="text/css" href="/styles/style.css">
 	<title></title>
 </head>
 <body>
 
-	<form action="/guests/<%=  guestObject.id %>/change?_method=PUT" method="POST">
-		Name: <input type="text" name="name" value="<%= guestObject.name %>">
-		Species: <input type="text" name="species" value="<%= guestObject.species %>">
-		Age: <input type="text" name="age" value="<%= guestObject.age %>">
-		Check-In: <input type="date" name="checkInDate" value="<%= guestObject.checkInDate %>">
-		Check-Out: <input type="date" name="checkOutDate" value="<%= guestObject.checkOutDate %>">
-		Checked In: <input type="checkbox" name="checkedIn" <% if(guestObject.checkedIn === true) {%>
-					checkedIn <% } %>/>
-		<button type="submit">Submit</button>
-	</form>
+	<div id="logo">
+		<h1> Red Woof Inn </h1>
+	</div>
+
+	<div id="content">
+		<div id="inner">
+			<h3> Reservation </h3>
+			<div id="change">
+			
+				<form action="/guests/<%=  guestObject.id %>/change?_method=PUT" method="POST">
+					Name: <input type="text" name="name" value="<%= guestObject.name %>">
+					Species: <input type="text" name="species" value="<%= guestObject.species %>">
+					Age: <input type="text" name="age" value="<%= guestObject.age %>"></br>
+					Check-In: <input type="date" name="checkInDate" value="<%= guestObject.checkInDate %>">
+					Check-Out: <input type="date" name="checkOutDate" value="<%= guestObject.checkOutDate %>">
+					Checked In: <input type="checkbox" name="checkedIn" <% if(guestObject.checkedIn === true) {%>
+								checkedIn <% } %>/>
+					<button type="submit">Submit</button>
+				</form>
+			</div>
+		</div>
+	</div>
 
 
 </body>

@@ -7,28 +7,33 @@
 	<title></title>
 </head>
 <body>
+	<div id="logo">
+		<h1> Red Woof Inn </h1>
+	</div>
 
-	<h1> Red Woof Inn </h1>
+	<div id="content">
+		<div id="inner">
+			<h3> Current Guests </h3>
 
-	<h3> Current Guests </h3>
+			<% guestList.forEach( (guest) => { %>
+				<h4> <a href="/guests/<%= guest.id %>/reservation"><%= guest.name %> </a> </h4>
 
-		<% guestList.forEach( (guest) => { %>
-			<h4> <a href="/guests/<%= guest.id %>/reservation"><%= guest.name %> </a> </h4>
+				<div id="buttons">
+					<form action="/guests/<%= guest.id %>?_method=DELETE" method="POST" id="buttonForm">
+						<button type="submit" name="checkout">Check Out</button>
+					</form>
 
-			<form action="/guests/<%= guest.id %>?_method=DELETE" method="POST">
-				<button type="submit" name="checkout">Check Out</button>
-			</form>
-
-			<form action="/guests/<%= guest.id %>/change">
-				<button type="submit" name="change">Change Reservation</button>
-			</form>
-	<% }) %>
-
-	<form action="/guests/make_reservation">
-				<button type="submit" name="makeRes">Make Reservation</button>
-			</form>
-
-
+		            <form action="/guests/<%= guest.id %>/change" id="buttonForm">
+						<button type="submit" name="change">Change Reservation</button>
+					</form>     <% }) %>
+				</div>
+			</br>
+				<form action="/guests/make_reservation">
+					<button type="submit" name="makeRes" id="makeRes"\>Make Reservation</button>
+				</form>
+		</div>
+	</div>
 	<script src="scripts/app.js"></script>
+
 </body>
 </html>

@@ -68,7 +68,7 @@ router.put("/:room/change", (req, res) => {
 		console.log()
 	})
 
-	res.redirect("/reservation")
+	res.redirect("./reservation")
 })
 
 router.get("/:room/reservation", (req, res) => {

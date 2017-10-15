@@ -3,24 +3,34 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=8, IE=9, IE=edge"/>
-	<link rel="stylesheet" type="text/css" href="styles/style.css">
+	<link rel="stylesheet" type="text/css" href="/styles/style.css">
 	<title></title>
 </head>
 <body>
+	<div id="logo">
+		<h1> Red Woof Inn </h1>
+	</div>
 
-	<h1> Reservation </h1>
-
-	<h3> <%= guestObject.name %> </h3>
+	<div id="content">
+		<div id="inner">
+			<h3> Reservation </h3>
+	
+	<div clas="res">
+	<h4> <%= guestObject.name %> </h4>
 	<p>Species: <%= guestObject.species %> </p>
 	<p>Age: <%= guestObject.age %> </p>
 	<p>Check-In Date: <%= guestObject.checkInDate %> </p>
 	<p>Check-Out Date: <%= guestObject.checkOutDate %> </p>
 	<p>Checked In: <% if(guestObject.checkedIn === true) {%> Yes <% } else { %> no <% } %> </p>
-	
+	</div>
+
+	<div id="buttons">
 	<form action="/guests/<%=  guestObject.id %>/reservation?_method=PUT" method="POST">
 		<button type="submit">Check In</button>
 	</form>
-	<a href="/guests">back</a>
-
+	</div>
+	<form action="/guests">
+		<button type="submit" id="back">Back</button>
+	</form>
 </body>
 </html>

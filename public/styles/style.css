@@ -1,0 +1,43 @@
+body {
+  background-image: url("http://wap.chinadaily.com.cn/img/attachement/jpg/site1/20160225/b083fe955aa11838d1e206.jpg");
+  background-size: cover;
+  color: red;
+  text-shadow: black 1px 1px;
+  font-size: 26px;
+}
+h3 {
+  font-size: 32px;
+}
+h4 {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+p {
+  font-size: 18px;
+}
+#buttons {
+  display: flex;
+  flex-direction: row;
+}
+#inner {
+  margin-left: 10px;
+}
+#logo {
+  display: flex;
+  justify-content: center;
+  font-size: 32px;
+}
+#content {
+  background-color: white;
+  border-width: 1px;
+  border-radius: 5px;
+  margin-left: 25%;
+  margin-right: 25%;
+  opacity: 0.9;
+}
+#makeRes {
+  margin-left: 38%;
+}
+#back {
+  margin-left: 46%;
+}
